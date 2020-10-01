@@ -14,7 +14,7 @@ CARD_SIZE=2.5
 check_dependencies() {
     if [[ -z $(which pdftoppm) ]]; then
 	cat >&2 <<EOF
-You don't have pdf2ppm installed.
+You don't have pdftoppm installed.
 
     It is included in poppler utils.
 
@@ -53,7 +53,8 @@ crop_file() {
     # dtc adds 1/8" padding
     # we're assuming poker cards here
 
-    local DPI=$(echo "$xdim / ${BLEED_SIZE}" | bc)
+    #local DPI=$(echo "$xdim / ${BLEED_SIZE}" | bc)
+    DPI=150
     local border=$(echo $DPI / 8 | bc)
 
     local newxdim=$(echo $(( ${xdim} - (${border} * 2) )))
@@ -76,7 +77,8 @@ round_corners(){
     local xdim=${dimensions%x*}
     local ydim=${dimensions#*x}
 
-    local DPI=$(echo "$xdim / ${CARD_SIZE}" | bc)
+    #local DPI=$(echo "$xdim / ${CARD_SIZE}" | bc)
+    local DPI=150
     local border=$(echo $DPI / 8 | bc)
 
     # make a mask
