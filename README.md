@@ -1,10 +1,11 @@
 # tts-tools
 Tools for importing games into TTS
 
+This is still very raw yet & in early stages. However, it's hoped that it might be of utility for someone.
 
 * dtc2tts - convert a PDF for Drive Thru Cards into a deck which can be imported into TTS
 
-
+* builddeck.sh -- takes a set of images and creates a custom card sheet, placing the card back in the proper location 
 
 
 
